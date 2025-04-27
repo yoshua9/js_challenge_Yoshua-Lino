@@ -10,5 +10,14 @@
     "errorLoadingProducts": "Error loading products",
     "previous": "Previous",
     "next": "Next"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "emptyCart": "Your cart is empty",
+    "shopNow": "Shop Now",
+    "unit": "Units",
+    "total": "Total: {total}",
+    "remove": "Remove",
+    "clearCart": "Clear cart"
   }
 }

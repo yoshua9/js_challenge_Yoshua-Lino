@@ -78,10 +78,10 @@ const handlePageChange = (page: number) => {
  * @computed
  */
 const visiblePages = computed(() => {
-  const maxVisiblePages = 5; // visible números del medio
+  const maxVisiblePages = 3;
   const halfVisible = Math.floor(maxVisiblePages / 2);
 
-  let start = Math.max(2, currentPage.value - halfVisible); // mínimo en 2 porque 1 estará fijo
+  let start = Math.max(2, currentPage.value - halfVisible);
   let end = Math.min(totalPages.value - 1, start + maxVisiblePages - 1);
 
   if (end - start + 1 < maxVisiblePages) {
@@ -130,7 +130,7 @@ onMounted(async () => {
   <DefaultLayout>
     <template #title>
       <div class="product-title__container border-r-m">
-        <h1 class="text-secondary">{{ $t('products.title') }}</h1>
+        <h1 class="text-h1">{{ $t('products.title') }}</h1>
       </div>
     </template>
     <template #body>
