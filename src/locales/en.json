@@ -2,5 +2,13 @@
   "header": {
     "products": "Products",
     "cart": "Cart"
+  },
+  "products": {
+    "title": "Product list",
+    "addToCart": "Add to Cart",
+    "loadingProducts": "Loading products...",
+    "errorLoadingProducts": "Error loading products",
+    "previous": "Previous",
+    "next": "Next"
   }
 }
