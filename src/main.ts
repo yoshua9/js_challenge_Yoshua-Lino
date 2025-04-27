@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
-import router from './router/index.ts'
+import router from './router/index'
 import { createPinia } from 'pinia'
 
 const i18n = createI18n({
