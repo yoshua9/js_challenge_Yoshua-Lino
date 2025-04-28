@@ -141,12 +141,12 @@ onMounted(async () => {
         </div>
 
         <!-- Products grid -->
-        <div v-else class="products-grid d-flex align-center justify-between flex-wrap">
+        <div v-else class="products-grid d-flex align-center justify-center flex-wrap">
           <div v-if="isLoading" class="loading-container d-flex align-center justify-center">
             {{ $t('products.loadingProducts') }}
           </div>
 
-          <div v-if="!isLoading" class="products-cards d-flex justify-between justify-sm-center flex-wrap">
+          <div v-if="!isLoading" class="products-cards d-flex justify-center flex-wrap">
             <div v-for="product in products" :key="product.id" class="product-card">
               <ProductCard :product="product" />
             </div>

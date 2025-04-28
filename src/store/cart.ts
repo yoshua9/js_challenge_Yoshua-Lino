@@ -35,15 +35,11 @@ export const useCartStore = defineStore('cart', () => {
      * @function removeFromCart
      * @description Removes a product from the cart or reduces its quantity
      * @param {number} productId - ID of the product to remove
-     * @param {number} quantity - Quantity to remove (default: 1)
      */
-    function removeFromCart(productId: number, quantity: number = 1) {
-        const existingItem = cartItems.value.find(item => item.product.id === productId)
-        if (existingItem) {
-            existingItem.quantity = Math.max(0, existingItem.quantity - quantity)
-            if (existingItem.quantity === 0) {
-                cartItems.value = cartItems.value.filter(item => item.product.id !== productId)
-            }
+    function removeFromCart(productId: number) {
+        const existingItemIndex = cartItems.value.findIndex(item => item.product.id === productId)
+        if (existingItemIndex !== -1) {
+            cartItems.value.splice(existingItemIndex, 1)
         }
     }
 

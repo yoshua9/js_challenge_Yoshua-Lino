@@ -79,11 +79,4 @@ body {
     .text-h1 {
         font-size: 1rem;
     }
-    .justify-sm-center {
-        justify-content: center;
-    }
-
-    .align-sm-center {
-        align-items: center;
-    }
 }

@@ -6,25 +6,12 @@
 <script setup lang="ts">
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import { useCartStore } from "@/store/cart";
-import { onMounted, ref } from 'vue';
 import { storeToRefs } from "pinia";
 
 // Store and state management
 const cartStore = useCartStore();
 const { orderedCartItems } = storeToRefs(cartStore);
 const { removeFromCart, clearCart } = cartStore;
-// Tracks quantities to remove for each product
-const removeQuantities = ref<{ [key: number]: number }>({});
-
-/**
- * @function initializeRemoveQuantities
- * @description Initializes the remove quantities for each cart item
- */
-const initializeRemoveQuantities = () => {
-  orderedCartItems.value.forEach(item => {
-    removeQuantities.value[item.product.id] = 1;
-  });
-};
 
 /**
  * @function handleRemoveFromCart
@@ -32,14 +19,9 @@ const initializeRemoveQuantities = () => {
  * @param {number} productId - ID of the product to remove
  */
 const handleRemoveFromCart = (productId: number) => {
-  const quantityToRemove = removeQuantities.value[productId] || 1;
-  removeFromCart(productId, quantityToRemove);
-  removeQuantities.value[productId] = 1;
+  removeFromCart(productId);
 };
 
-onMounted(() =>{
-  initializeRemoveQuantities();
-})
 </script>
 
 <template>
@@ -81,17 +63,16 @@ onMounted(() =>{
                   }}</p>
               </div>
 
+              <input
+                type="number"
+                v-model="item.quantity"
+                :min="1"
+                class="quantity-input d-flex justify-center border-r-m"
+              >
+
 
               <div class="quantity-control d-flex flex-wrap align-items-center gap-2">
-                <input
-                  type="number"
-                  v-model="removeQuantities[item.product.id]"
-                  :min="1"
-                  :max="item.quantity"
-                  class="quantity-input"
-                >
                 <button
-                  :disabled="removeQuantities[item.product.id] <= 0"
                   class="remove-btn"
                   @click="handleRemoveFromCart(item.product.id)"
                 >
@@ -161,16 +142,15 @@ onMounted(() =>{
       width: 30%;
     }
 
-    .quantity-control {
-      .quantity-input {
-        width: 60px;
-        padding: 4px;
-        border: 1px solid var(--secondary-color);
-        border-radius: 4px;
-      }
+    .quantity-input {
+      width: 100px;
+      padding: 4px;
+      text-align: center;
+    }
 
+    .quantity-control {
       .remove-btn {
-        padding: 4px 8px;
+        padding: 16px;
         background-color: var(--danger-color);
         color: white;
         border: none;

@@ -59,14 +59,6 @@ describe('Cart Store', () => {
     expect(store.cartItems).toHaveLength(0)
   })
 
-  it('should reduce quantity when removing part of the items', () => {
-    const store = useCartStore()
-    store.addToCart(mockProduct, 3)
-    store.removeFromCart(mockProduct.id, 2)
-
-    expect(store.cartItems[0].quantity).toBe(1)
-  })
-
   it('should clear the cart', () => {
     const store = useCartStore()
     store.addToCart(mockProduct)
