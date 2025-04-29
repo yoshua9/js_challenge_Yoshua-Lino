@@ -1,5 +1,48 @@
-# Vue 3 + TypeScript + Vite
+# 🛒 SPA Js Challenge
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a single-page application (SPA) built with **Vue 3**, **TypeScript**, **Vite**, and **Pinia** for the cart state management.  
+It consumes the [DummyJSON API](https://dummyjson.com/docs/products) to display a paginated list of products with cart functionalities.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+---
+
+## 🛠️ Tech Stack
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Pinia (State Management)](https://pinia.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Axios](https://axios-http.com/)
+- [Vue I18n](https://vue-i18n.intlify.dev/)
+
+---
+
+## ⚙️ Setup Instructions
+
+## Setup
+
+### 1. Clone the repository
+
+`git clone https://github.com/yoshua9/js_challenge_Yoshua-Lino.git`
+
+
+### 2. Install dependencies:  
+`npm install`
+
+
+### 3. Run locally:  
+   `npm run dev`
+
+## Build for Production
+`npm run build`
+
+## Preview Production Build
+`npm run preview`
+
+## Testing
+### To execute test, run the command:
+
+`npm run test`
+
+### To run unit tests with coverage, use the command:
+`npm run test:unit`
