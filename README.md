@@ -45,4 +45,4 @@ It consumes the [DummyJSON API](https://dummyjson.com/docs/products) to display 
 `npm run test`
 
 ### To run unit tests with coverage, use the command:
-`npm run test:unit`
+`npm run test:ui`
